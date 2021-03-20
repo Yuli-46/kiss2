@@ -1,0 +1,89 @@
+.container {
+  width: 800px;
+  height: 600px;
+  background-color: #050210;
+  margin: 0 auto;
+  position: relative;
+}
+
+.glow-circle {
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(black, red, black, red, black);
+  animation-name: circle-rotation;
+  animation-duration: 1.2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  filter: blur(50px);
+}
+
+.rotation-circle {
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(black, red, black, red, black);
+  animation-name: circle-rotation;
+  animation-duration: 1.2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: 1;
+}
+
+@keyframes circle-rotation {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.pulse-circle {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2e0102;
+  z-index: 2;
+}
+
+.pulse-dot img {
+  width: 10px;
+  height: 10px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  animation-name: pulse;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(30deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(32) rotate(30deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(30deg);
+    opacity: 0.1;
+}
